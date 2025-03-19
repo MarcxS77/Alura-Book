@@ -62,16 +62,24 @@
   cursor: pointer;
 }
 
-.container__titulo{
+.container__titulo {
   display: none;
 }
 
-.opcoes{
+.opcoes {
   display: none;
 }
 
-.container__texto{
+.container__texto {
   display: none;
+}
+
+.container__botao:checked ~ .container__rotulo > .cabecalho__menu-hamburguer {
+  background-image: url(/assets/Menu\ Aberto.svg);
+}
+
+.container__botao:checked ~ .container__rotulo {
+  background: var(--azul-degrade);
 }
 
 @media screen and (min-width: 1024px) {
@@ -81,74 +89,87 @@
     font-size: 30px;
   }
 
-  .container__titulo{
+  .container__titulo {
     display: block;
     font-weight: 400;
   }
 
-  .container__titulo--negrito{
+  .container__titulo--negrito {
     font-weight: 700;
   }
 
-  .opcoes{
+  .opcoes {
     display: flex;
   }
 
-  .opcoes__item{
+  .opcoes__item {
     padding: 1em;
     text-transform: uppercase;
   }
 
-  .opcoes__link{
+  .opcoes__link {
     text-decoration: none;
     color: var(--preto);
   }
 
-  .container__imagem-transparente{
+  .container__imagem-transparente {
     display: none;
   }
 
-  .cabecalho__menu-hamburguer{
+  .cabecalho__menu-hamburguer {
     display: none;
   }
 
-  .opcoes__botao:checked~ .lista-menu {
+  .opcoes__botao:checked ~ .lista-menu {
     display: block;
     width: auto;
   }
 
-  .opcoes__botao{
+  .opcoes__botao {
     display: none;
   }
 
-  .lista-menu__titulo-categorias:o{
+  .lista-menu__titulo-categorias:o {
     background-color: var(--azul-degrade);
   }
 
+  .opcoes__botao:checked ~ .opcoes__rotulo > .opcoes__item {
+    background: var(--azul-degrade);
+    color: var(--branco);
+  }
 
+  .opcoes__item {
+    padding: 2em 1em;
+  }
+
+  .lista-menu__item:hover {
+    background: var(--azul-degrade);
+  }
+
+  .lista-menu__item:hover > .lista-menu__link {
+    -webkit-text-fill-color: var(--branco);
+    text-decoration: none;
+  }
 }
 
-@media screen and (min-width: 1728px){
-
-  .container__texto{
+@media screen and (min-width: 1728px) {
+  .container__texto {
     display: block;
   }
 
-  .container__link{
+  .container__link {
     display: flex;
     align-items: center;
     text-decoration: none;
     color: var(--preto);
   }
 
-  .cabecalho{
+  .cabecalho {
     padding: 0 2em;
   }
 
-  .opcoes{
+  .opcoes {
     margin-right: auto;
     padding: 0 2em;
   }
-
-  
 }
